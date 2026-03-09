@@ -1,0 +1,25 @@
+@startuml
+skinparam state {
+  BackgroundColor LightCyan
+  BorderColor DarkBlue
+}
+
+[*] --> Init : Bekapcsolas
+
+state Init {
+  Init : Kijelzo: "0"
+}
+
+state InputtingNumber {
+  InputtingNumber : Szamjegyek fuzese
+}
+
+state OperatorPending {
+  OperatorPending : Operator hozzaadva
+}
+
+Init --> InputtingNumber : Szamjegy
+InputtingNumber --> OperatorPending : Operator (+, -, *, /)
+OperatorPending --> InputtingNumber : Uj szamjegy
+
+@enduml
